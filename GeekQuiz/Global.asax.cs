@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using GeekQuiz.Models;
+using System.Data.Entity;
 
 namespace GeekQuiz
 {
@@ -14,7 +15,7 @@ namespace GeekQuiz
     {
         protected void Application_Start()
         {
-            System.Data.Entity.Database.SetInitializer(new TriviaDatabaseInitializer());
+            Database.SetInitializer(new TriviaDatabaseInitializer());
 
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
